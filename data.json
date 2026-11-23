@@ -1,0 +1,341 @@
+{
+ "updated": "2026-11-23T22:26:25.158Z",
+ "auth": {
+  "user": "erika",
+  "salt": "3c73243d6b27f629",
+  "hash": "363a06dbb1902365586e1f503e30667ec8a84a0608fdc97c4b0d9797e3e7e09e"
+ },
+ "store": {
+  "name": "Chula's Boutique",
+  "slogan": "Mira lo disponible y aparta antes de llegar",
+  "notice": "Precios y tallas se confirman por WhatsApp al hacer tu pedido.",
+  "showNotice": true,
+  "whatsapp": "5216861105904",
+  "phone": "686 110 5904",
+  "email": "chulasboutique1@gmail.com",
+  "address": "Av. Fernando Montes de Oca #802-3, esq. Río Mocorito, Col. Prohogar, Mexicali, B.C.",
+  "hours": "[HORARIO]",
+  "instagram": "https://www.instagram.com/chulasboutiquemxli/",
+  "facebook": "https://www.facebook.com/share/1LaQRq5oh1/",
+  "logo": "img/logo.jpg"
+ },
+ "sizeChart": [
+  {
+   "size": "CH",
+   "busto": [
+    84,
+    88
+   ],
+   "cintura": [
+    66,
+    70
+   ],
+   "cadera": [
+    90,
+    94
+   ],
+   "pant": "3 – 5",
+   "us": "2 – 4"
+  },
+  {
+   "size": "M",
+   "busto": [
+    89,
+    94
+   ],
+   "cintura": [
+    71,
+    76
+   ],
+   "cadera": [
+    95,
+    100
+   ],
+   "pant": "7 – 9",
+   "us": "6 – 8"
+  },
+  {
+   "size": "G",
+   "busto": [
+    95,
+    101
+   ],
+   "cintura": [
+    77,
+    83
+   ],
+   "cadera": [
+    101,
+    107
+   ],
+   "pant": "11 – 13",
+   "us": "10 – 12"
+  },
+  {
+   "size": "XG",
+   "busto": [
+    102,
+    109
+   ],
+   "cintura": [
+    84,
+    91
+   ],
+   "cadera": [
+    108,
+    115
+   ],
+   "pant": "15 – 17",
+   "us": "14 – 16"
+  }
+ ],
+ "products": [
+  {
+   "id": "p1",
+   "name": "Vestido fruncido manga larga",
+   "cat": "Vestidos",
+   "price": null,
+   "status": "disponible",
+   "sizes": [
+    "CH",
+    "M",
+    "G",
+    "XG"
+   ],
+   "photos": [
+    "img/p1-1.jpg",
+    "img/p1-2.jpg"
+   ],
+   "colors": "Vino o rojo",
+   "colorOpts": [
+    "Vino",
+    "Rojo"
+   ],
+   "desc": "Escote cruzado y fruncido lateral con cordón. Se ve increíble con tacón o con botas.",
+   "active": true,
+   "stock": {}
+  },
+  {
+   "id": "p2",
+   "name": "Vestido satinado de tirantes",
+   "cat": "Vestidos",
+   "price": null,
+   "status": "disponible",
+   "sizes": [
+    "CH",
+    "M",
+    "G",
+    "XG"
+   ],
+   "photos": [
+    "img/p2-1.jpg",
+    "img/p2-2.jpg"
+   ],
+   "colors": "Verde esmeralda",
+   "desc": "Satinado con escote drapeado y falda cruzada. Para fiesta o look vaquero.",
+   "active": true,
+   "stock": {}
+  },
+  {
+   "id": "p3",
+   "name": "Conjunto animal print con falda",
+   "cat": "Conjuntos",
+   "price": null,
+   "status": "disponible",
+   "sizes": [
+    "CH",
+    "M",
+    "G",
+    "XG"
+   ],
+   "photos": [
+    "img/p3-1.jpg",
+    "img/p3-2.jpg"
+   ],
+   "colors": "Animal print y negro",
+   "desc": "Blusa de manga larga con abertura al frente y falda negra ajustada.",
+   "active": true,
+   "stock": {}
+  },
+  {
+   "id": "p4",
+   "name": "Falda midi plisada",
+   "cat": "Faldas",
+   "price": null,
+   "status": "disponible",
+   "sizes": [
+    "CH",
+    "M",
+    "G",
+    "XG"
+   ],
+   "photos": [
+    "img/p4-1.jpg"
+   ],
+   "colors": "Camel",
+   "desc": "Con pinzas y bolsas. Combínala con blusa negra y botas.",
+   "active": true,
+   "stock": {}
+  },
+  {
+   "id": "p5",
+   "name": "Blusa satinada cruzada",
+   "cat": "Blusas",
+   "price": null,
+   "status": "disponible",
+   "sizes": [
+    "CH",
+    "M",
+    "G",
+    "XG"
+   ],
+   "photos": [
+    "img/p5-1.jpg"
+   ],
+   "colors": "Negro",
+   "desc": "Manga abullonada y escote cruzado. Elegante con falda midi.",
+   "active": true,
+   "stock": {}
+  },
+  {
+   "id": "p6",
+   "name": "Vestido largo con olán",
+   "cat": "Vestidos",
+   "price": null,
+   "status": "disponible",
+   "sizes": [
+    "CH",
+    "M",
+    "G",
+    "XG"
+   ],
+   "photos": [
+    "img/p6-1.jpg"
+   ],
+   "colors": "Rojo",
+   "desc": "Escote en V, manga larga y olán al frente con abertura. Para eventos y cenas.",
+   "active": true,
+   "stock": {}
+  },
+  {
+   "id": "p7",
+   "name": "Vestido camisero con cinturón",
+   "cat": "Vestidos",
+   "price": null,
+   "status": "disponible",
+   "sizes": [
+    "CH",
+    "M",
+    "G",
+    "XG"
+   ],
+   "photos": [
+    "img/p7-1.jpg"
+   ],
+   "colors": "Negro",
+   "desc": "Midi con botones, bolsas al frente y cinturón. Perfecto para la oficina.",
+   "active": true,
+   "stock": {}
+  },
+  {
+   "id": "p8",
+   "name": "Vestido de mezclilla",
+   "cat": "Vestidos",
+   "price": null,
+   "status": "disponible",
+   "sizes": [
+    "CH",
+    "M",
+    "G",
+    "XG"
+   ],
+   "photos": [
+    "img/p8-1.jpg"
+   ],
+   "colors": "Azul mezclilla",
+   "desc": "Mangas abullonadas, falda con olán y cinturón tejido.",
+   "active": true,
+   "stock": {}
+  },
+  {
+   "id": "p9",
+   "name": "Conjunto suéter y pantalón",
+   "cat": "Conjuntos",
+   "price": null,
+   "status": "disponible",
+   "sizes": [
+    "CH",
+    "M",
+    "G",
+    "XG"
+   ],
+   "photos": [
+    "img/p9-1.jpg"
+   ],
+   "colors": "Café",
+   "desc": "Suéter con brillitos y pantalón de pierna amplia con cordón. Cómodo y bonito.",
+   "active": true,
+   "stock": {}
+  },
+  {
+   "id": "p10",
+   "name": "Vestido animal print",
+   "cat": "Vestidos",
+   "price": null,
+   "status": "disponible",
+   "sizes": [
+    "CH",
+    "M",
+    "G",
+    "XG"
+   ],
+   "photos": [
+    "img/p10-1.jpg"
+   ],
+   "colors": "Animal print",
+   "desc": "Ajustado, de hombros descubiertos, largo a la rodilla.",
+   "active": true,
+   "stock": {}
+  },
+  {
+   "id": "p11",
+   "name": "Blusa estampado de hojas",
+   "cat": "Blusas",
+   "price": null,
+   "status": "disponible",
+   "sizes": [
+    "CH",
+    "M",
+    "G",
+    "XG"
+   ],
+   "photos": [
+    "img/p11-1.jpg"
+   ],
+   "colors": "Azul y blanco",
+   "desc": "Cuello con abertura y manga 3/4. Combina con pantalón azul marino.",
+   "active": true,
+   "stock": {}
+  },
+  {
+   "id": "p12",
+   "name": "Blusa sastre hombros descubiertos",
+   "cat": "Blusas",
+   "price": null,
+   "status": "disponible",
+   "sizes": [
+    "CH",
+    "M",
+    "G",
+    "XG"
+   ],
+   "photos": [
+    "img/p12-1.jpg"
+   ],
+   "colors": "Terracota",
+   "desc": "Corte de saco con botones y tirantes. Se ve increíble con pantalón claro.",
+   "active": true,
+   "stock": {}
+  }
+ ]
+}
