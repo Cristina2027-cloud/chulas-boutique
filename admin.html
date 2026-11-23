@@ -148,7 +148,14 @@ a{color:var(--red)}
 .outbtn[aria-pressed="true"]{background:#5c5450;border-color:#5c5450;color:#fff}
 .outbtn:hover{border-color:var(--choc)}
 .pc.sold .ph img{filter:saturate(.35) brightness(.85)}
-.pc .acts2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.toggles{display:flex;flex-direction:column;gap:2px;margin-top:auto;padding-top:8px;border-top:1px dashed var(--line)}
+.trow{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;font-weight:700;color:var(--soft)}
+.trow .sw{min-height:40px;font-size:13px}
+.tlbl{min-width:64px;text-align:right}
+.sw-stock[aria-checked="false"] .tr{background:#5c5450}
+.sw-stock[aria-checked="false"] .tlbl{color:#5c5450}
+.sw-stock[aria-checked="true"] .tlbl{color:var(--green)}
+@media (max-width:700px){.tlbl{display:none}.trow{font-size:12px;line-height:1.2}.trow .sw{min-height:44px}}
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:22px}
 .stat{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:18px;position:relative;overflow:hidden}
 .stat b{display:block;font-family:'Playfair Display',serif;font-size:36px;line-height:1}
@@ -532,9 +539,10 @@ function render(){
     return '<article class="pc' + (off ? ' off' : '') + (out && !off ? ' sold' : '') + '"><div class="ph"><img src="' + esc(src(p.photos[0]) || 'img/logo.jpg') + '" alt="" loading="lazy">' + rib + (p.photos.length > 1 ? '<span class="nphotos">' + p.photos.length + ' fotos</span>' : '') + '</div>' +
       '<div class="bd"><h3>' + esc(p.name) + '</h3><span class="meta">' + esc(p.cat || 'Sin categoría') + ' · ' + esc((p.sizes || []).join(', ')) + '</span>' +
       '<span class="price' + (p.price == null || p.price === '' ? ' ask' : '') + '">' + (p.price == null || p.price === '' ? 'Precio por WhatsApp' : money(p.price)) + '</span>' +
-      '<div class="row"><button type="button" class="sw" role="switch" aria-checked="' + !off + '" data-tog="' + esc(p.id) + '" aria-label="' + esc(p.name) + ' visible en el catálogo"><span class="tr"></span>' + (off ? 'Suspendida' : 'Visible') + '</button></div>' +
-      '<div class="acts2"><button type="button" class="outbtn" data-sold="' + esc(p.id) + '" aria-pressed="' + out + '" aria-label="' + esc(p.name) + (out ? ': marcada como agotada, toca para marcar disponible' : ': marcar como agotada') + '">' + (out ? '✕ Agotada' : 'Marcar agotada') + '</button>' +
-      '<button type="button" class="edit" data-edit="' + esc(p.id) + '" style="justify-content:center">Editar</button></div></div></article>';
+      '<div class="toggles">' +
+      '<div class="trow"><span>En existencia</span><button type="button" class="sw sw-stock" role="switch" aria-checked="' + !out + '" data-sold="' + esc(p.id) + '" aria-label="' + esc(p.name) + ' en existencia"><span class="tlbl">' + (out ? 'Agotada' : 'Sí hay') + '</span><span class="tr"></span></button></div>' +
+      '<div class="trow"><span>Visible en catálogo</span><button type="button" class="sw" role="switch" aria-checked="' + !off + '" data-tog="' + esc(p.id) + '" aria-label="' + esc(p.name) + ' visible en el catálogo"><span class="tlbl">' + (off ? 'Suspendida' : 'Visible') + '</span><span class="tr"></span></button></div>' +
+      '</div><button type="button" class="edit" data-edit="' + esc(p.id) + '" style="justify-content:center;width:100%">Editar prenda</button></div></article>';
   }).join('');
   if (!list.length && P.length) html += '<div class="empty">No hay prendas con ese filtro.</div>';
   $('#grid').innerHTML = html;
