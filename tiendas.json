@@ -1,0 +1,11 @@
+{
+ "baseUrl": "https://cristina2027-cloud.github.io/chulas-boutique/",
+ "tiendas": [
+  {
+   "id": "t_4a3397e9",
+   "slug": "chulas-boutique",
+   "nombre": "Chula's Boutique",
+   "creada": "2026-11-23"
+  }
+ ]
+}
