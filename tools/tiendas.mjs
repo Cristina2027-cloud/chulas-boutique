@@ -27,7 +27,8 @@ function ocupados(reg) {
 
 function generarArchivos(reg, t) {
   const dir = join(RAIZ, t.slug);
-  const url = (reg.baseUrl || '') + t.slug + '/';
+  // t.url permite que una boutique tenga su propio dominio (ej. Netlify publica la carpeta en la raíz).
+  const url = t.url || ((reg.baseUrl || '') + t.slug + '/');
   const catalogo = readFileSync(join(RAIZ, 'plantilla/catalogo.html'), 'utf8').replaceAll('__URL__', url);
   writeFileSync(join(dir, 'index.html'), catalogo);
   writeFileSync(join(dir, 'admin.html'), readFileSync(join(RAIZ, 'plantilla/admin.html'), 'utf8'));
