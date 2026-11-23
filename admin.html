@@ -102,6 +102,34 @@ a{color:var(--red)}
  .mobilebar .lg-badge{width:42px;height:42px}
 }
 
+.hero{position:relative;overflow:hidden;display:flex;align-items:center;gap:26px;background:var(--choc2);color:var(--cream);border-radius:28px;padding:24px 28px;margin-bottom:24px}
+.hero::before{content:'';position:absolute;width:420px;height:420px;border-radius:50%;right:-120px;top:-200px;background:radial-gradient(circle,rgba(199,53,59,.55),rgba(199,53,59,0) 65%)}
+.hero::after{content:'';position:absolute;width:300px;height:300px;border-radius:50%;left:30%;bottom:-220px;background:radial-gradient(circle,rgba(201,164,106,.25),rgba(201,164,106,0) 65%)}
+.hlogo{position:relative;z-index:1;width:118px;height:118px;flex:none;display:grid;place-items:center}
+.hlogo .ring{position:absolute;inset:-8px;border-radius:50%;border:2px dashed rgba(242,167,169,.55);animation:spin 26s linear infinite}
+.hlogo .disc{width:100%;height:100%;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 0 0 6px rgba(255,255,255,.08),0 18px 40px rgba(0,0,0,.35);animation:pulse 3s ease-in-out infinite}
+.hlogo img{width:84%;mix-blend-mode:multiply;animation:beat 2.6s ease-in-out infinite;transform-origin:50% 60%}
+.hlogo .ht{position:absolute;color:var(--red2);opacity:0;font-size:18px;line-height:1;animation:rise 4.5s ease-in infinite}
+.hlogo .h1{left:-6px;bottom:10px}.hlogo .h2{right:-4px;bottom:24px;animation-delay:1.5s;font-size:14px;color:var(--rose)}.hlogo .h3{left:48%;bottom:-6px;animation-delay:3s;font-size:16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes beat{0%,100%{transform:scale(1)}12%{transform:scale(1.07)}24%{transform:scale(.98)}36%{transform:scale(1.05)}50%{transform:scale(1)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 6px rgba(255,255,255,.08),0 18px 40px rgba(0,0,0,.35)}50%{box-shadow:0 0 0 12px rgba(242,167,169,.12),0 18px 40px rgba(0,0,0,.35)}}
+@keyframes rise{0%{opacity:0;transform:translateY(0) scale(.6)}15%{opacity:.95}100%{opacity:0;transform:translateY(-110px) scale(1.15)}}
+@media (prefers-reduced-motion:reduce){.hlogo .ring,.hlogo .disc,.hlogo img,.hlogo .ht{animation:none}.hlogo .ht{display:none}}
+.htxt{position:relative;z-index:1;min-width:0;flex:1}
+.htxt small{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);font-weight:700}
+.htxt h2{font-size:clamp(26px,3vw,36px);color:#fff;margin:4px 0}
+.htxt h2 i{color:var(--rose);font-weight:500}
+.htxt p{margin:0;color:#E8D9CF;font-size:15px}
+.hmini{position:relative;z-index:1;display:flex;gap:10px;flex-wrap:wrap}
+.hmini span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:10px 14px;font-size:13px;color:#E8D9CF}
+.hmini b{display:block;font-family:'Playfair Display',serif;font-size:22px;color:#fff;line-height:1}
+@media (max-width:700px){.hero{flex-direction:column;text-align:center;padding:24px 18px}.hmini{justify-content:center}.hlogo{width:96px;height:96px}}
+.outbtn{border:1.5px solid var(--line);background:#fff;border-radius:12px;min-height:40px;padding:0 12px;font-weight:700;font-size:13px;color:var(--choc);display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.outbtn[aria-pressed="true"]{background:#5c5450;border-color:#5c5450;color:#fff}
+.outbtn:hover{border-color:var(--choc)}
+.pc.sold .ph img{filter:saturate(.35) brightness(.85)}
+.pc .acts2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:22px}
 .stat{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:18px;position:relative;overflow:hidden}
 .stat b{display:block;font-family:'Playfair Display',serif;font-size:36px;line-height:1}
@@ -261,7 +289,11 @@ a{color:var(--red)}
   </nav>
 
   <main class="main">
-    <div class="mobilebar"><div class="lg-badge"><img data-logo src="img/logo.jpg" alt=""></div><b id="mobName" style="font-family:'Playfair Display',serif;font-size:20px">Chula's Boutique</b></div>
+    <section class="hero" aria-label="Bienvenida">
+      <div class="hlogo" aria-hidden="true"><span class="ring"></span><div class="disc"><img data-logo src="img/logo.jpg" alt=""></div><span class="ht h1">♥</span><span class="ht h2">♥</span><span class="ht h3">♥</span></div>
+      <div class="htxt"><small id="hDate"></small><h2 id="hHello">¡Hola, <i>Erika</i>!</h2><p id="hName">Bienvenida al panel de Chula's Boutique</p></div>
+      <div class="hmini" id="hMini"></div>
+    </section>
     <header class="topbar">
       <div><h1 id="viewTitle">Tus prendas</h1><p id="viewSub">Edita, suspende o agrega prendas a tu catálogo.</p></div>
       <div class="pub"><span id="chgPill" class="pill-ok">Todo publicado</span><button class="btn btn-red" id="pubBtn" type="button"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M5 20h14"/></svg>Publicar cambios</button></div>
@@ -276,6 +308,7 @@ a{color:var(--red)}
           <button type="button" data-f="all" aria-pressed="true">Todas</button>
           <button type="button" data-f="on" aria-pressed="false">Visibles</button>
           <button type="button" data-f="off" aria-pressed="false">Suspendidas</button>
+          <button type="button" data-f="out" aria-pressed="false">Agotadas</button>
         </div>
       </div>
       <div class="grid" id="grid"></div>
@@ -463,17 +496,23 @@ function isOut(p){ return p.status === 'agotado' || (p.sizes && p.sizes.length &
 function render(){
   var P = data.products, on = P.filter(function(p){ return p.active !== false; }).length;
   $('#stats').innerHTML = '<div class="stat s1"><i></i><b>' + P.length + '</b><span>Prendas</span></div><div class="stat s2"><i></i><b>' + on + '</b><span>Visibles</span></div><div class="stat s3"><i></i><b>' + (P.length - on) + '</b><span>Suspendidas</span></div><div class="stat s4"><i></i><b>' + P.filter(isOut).length + '</b><span>Agotadas</span></div>';
+  var hr = new Date().getHours(), sal = hr < 12 ? 'Buenos días' : hr < 19 ? 'Buenas tardes' : 'Buenas noches';
+  $('#hDate').textContent = new Date().toLocaleDateString('es-MX', { weekday:'long', day:'numeric', month:'long' });
+  $('#hHello').innerHTML = sal + ', <i>' + esc(cap(data.auth.user)) + '</i>';
+  $('#hName').textContent = 'Bienvenida al panel de ' + data.store.name;
+  $('#hMini').innerHTML = '<span><b>' + on + '</b>en catálogo</span><span><b>' + P.filter(isOut).length + '</b>agotadas</span><span><b>' + (P.length - on) + '</b>suspendidas</span>';
   var q = $('#q').value.trim().toLowerCase();
-  var list = P.filter(function(p){ return (filter === 'all' || (filter === 'on' ? p.active !== false : p.active === false)) && (!q || (p.name + ' ' + p.cat).toLowerCase().indexOf(q) > -1); });
+  var list = P.filter(function(p){ return (filter === 'all' || (filter === 'on' ? p.active !== false : filter === 'out' ? isOut(p) : p.active === false)) && (!q || (p.name + ' ' + p.cat).toLowerCase().indexOf(q) > -1); });
   var html = '<button type="button" class="add-card" id="addNew"><span class="plus" aria-hidden="true">+</span>Agregar prenda</button>';
   html += list.map(function(p){
     var off = p.active === false, out = isOut(p);
     var rib = off ? '<span class="ribbon r-off">Suspendida</span>' : out ? '<span class="ribbon r-out">Agotada</span>' : p.status === 'pocas' ? '<span class="ribbon r-few">Últimas piezas</span>' : '<span class="ribbon r-ok">Disponible</span>';
-    return '<article class="pc' + (off ? ' off' : '') + '"><div class="ph"><img src="' + esc(src(p.photos[0]) || 'img/logo.jpg') + '" alt="" loading="lazy">' + rib + (p.photos.length > 1 ? '<span class="nphotos">' + p.photos.length + ' fotos</span>' : '') + '</div>' +
+    return '<article class="pc' + (off ? ' off' : '') + (out && !off ? ' sold' : '') + '"><div class="ph"><img src="' + esc(src(p.photos[0]) || 'img/logo.jpg') + '" alt="" loading="lazy">' + rib + (p.photos.length > 1 ? '<span class="nphotos">' + p.photos.length + ' fotos</span>' : '') + '</div>' +
       '<div class="bd"><h3>' + esc(p.name) + '</h3><span class="meta">' + esc(p.cat || 'Sin categoría') + ' · ' + esc((p.sizes || []).join(', ')) + '</span>' +
       '<span class="price' + (p.price == null || p.price === '' ? ' ask' : '') + '">' + (p.price == null || p.price === '' ? 'Precio por WhatsApp' : money(p.price)) + '</span>' +
-      '<div class="row"><button type="button" class="sw" role="switch" aria-checked="' + !off + '" data-tog="' + esc(p.id) + '" aria-label="' + esc(p.name) + ' visible en el catálogo"><span class="tr"></span>' + (off ? 'Suspendida' : 'Visible') + '</button>' +
-      '<button type="button" class="edit" data-edit="' + esc(p.id) + '">Editar</button></div></div></article>';
+      '<div class="row"><button type="button" class="sw" role="switch" aria-checked="' + !off + '" data-tog="' + esc(p.id) + '" aria-label="' + esc(p.name) + ' visible en el catálogo"><span class="tr"></span>' + (off ? 'Suspendida' : 'Visible') + '</button></div>' +
+      '<div class="acts2"><button type="button" class="outbtn" data-sold="' + esc(p.id) + '" aria-pressed="' + out + '" aria-label="' + esc(p.name) + (out ? ': marcada como agotada, toca para marcar disponible' : ': marcar como agotada') + '">' + (out ? '✕ Agotada' : 'Marcar agotada') + '</button>' +
+      '<button type="button" class="edit" data-edit="' + esc(p.id) + '" style="justify-content:center">Editar</button></div></div></article>';
   }).join('');
   if (!list.length && P.length) html += '<div class="empty">No hay prendas con ese filtro.</div>';
   $('#grid').innerHTML = html;
@@ -484,6 +523,10 @@ $('#filt').addEventListener('click', function(e){ var b = e.target.closest('[dat
 $('#grid').addEventListener('click', function(e){
   var t = e.target.closest('[data-tog]'), ed = e.target.closest('[data-edit]');
   if (t) { var p = data.products.find(function(x){ return x.id === t.dataset.tog; }); p.active = p.active === false; saveDraft(); render(); toast(p.active ? '“' + p.name + '” vuelve a estar visible' : '“' + p.name + '” suspendida'); var nb = $('[data-tog="' + p.id + '"]'); if (nb) nb.focus(); }
+  var so = e.target.closest('[data-sold]');
+  if (so) { var q = data.products.find(function(x){ return x.id === so.dataset.sold; }); var wasOut = isOut(q);
+    if (wasOut) { q.status = 'disponible'; q.stock = {}; } else { q.status = 'agotado'; }
+    saveDraft(); render(); toast(wasOut ? '“' + q.name + '” vuelve a estar disponible' : '“' + q.name + '” marcada como agotada'); var nb2 = $('[data-sold="' + q.id + '"]'); if (nb2) nb2.focus(); }
   if (ed) openEditor(ed.dataset.edit);
   if (e.target.closest('#addNew')) openEditor(null);
 });
@@ -516,6 +559,7 @@ function edRender(){
   ['dragleave','drop'].forEach(function(t){ d.addEventListener(t, function(e){ e.preventDefault(); d.classList.remove('over'); }); });
   d.addEventListener('drop', function(e){ addPhotos(e.dataTransfer.files); });
 }
+function cap(s){ s = String(s || ''); return s.charAt(0).toUpperCase() + s.slice(1); }
 function uniq(a){ return a.filter(function(x, i){ return a.indexOf(x) === i; }); }
 $('#edFile').addEventListener('change', function(){ addPhotos(this.files); this.value = ''; });
 function addPhotos(files){ files = Array.prototype.slice.call(files || []).filter(function(f){ return /^image\//.test(f.type); }); if (!files.length) return;
