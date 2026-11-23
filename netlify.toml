@@ -1,0 +1,5 @@
+# Netlify publica solo la carpeta de la boutique, así queda en la raíz: https://chulas-boutique.netlify.app/
+# (GitHub Pages sigue publicando el repositorio completo.)
+[build]
+  publish = "chulas-boutique"
+  command = ""
